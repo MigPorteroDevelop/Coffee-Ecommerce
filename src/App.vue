@@ -13,16 +13,22 @@ onMounted(() => {
 })
 
 const addToCart = (guitar) => {
-  guitar.quantity = 1;
-  cart.value.push(guitar);
+  const existCart = cart.value.findIndex(product => product.id === guitar.id)
+
+  if (existCart >= 0) {
+    //don't use id from db, use position in array
+    cart.value[existCart].quantity++
+  } else {
+    guitar.quantity = 1;
+    cart.value.push(guitar);
+  }
 }
+
 console.log(cart.value)
 </script>
 
 <template>
-  <Header 
-  :cart="cart"
-  />
+  <Header :cart="cart" />
 
   <main class="container-xl">
     <h2 class="text-center py-5">Our Collection</h2>
