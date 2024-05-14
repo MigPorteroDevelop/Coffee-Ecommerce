@@ -5,6 +5,7 @@ const props = defineProps({
     required: true
   }
 })
+
 </script>
 
 <template>
@@ -36,20 +37,19 @@ const props = defineProps({
                   <tbody>
                     <tr v-for="product in cart">
                       <td>
-                        <img class="img-fluid" 
-                        :src="'/img/' + product.image + '.jpg'"
-                        :alt="'guitar img' + product.name">
+                        <img class="img-fluid" :src="'/img/' + product.image + '.jpg'"
+                          :alt="'guitar img' + product.name">
                       </td>
                       <td>{{ product.name }}</td>
                       <td class="fw-bold">
                         {{ product.price }}
                       </td>
                       <td class="flex align-items-start gap-4">
-                        <button type="button" class="btn btn-dark">
+                        <button @click="$emit('decrement-quantity', product.id)" type="button" class="btn btn-dark">
                           -
                         </button>
                         {{ product.quantity }}
-                        <button type="button" class="btn btn-dark">
+                        <button @click="$emit('increment-quantity', product.id)" type="button" class="btn btn-dark">
                           +
                         </button>
                       </td>

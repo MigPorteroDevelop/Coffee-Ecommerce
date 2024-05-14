@@ -24,17 +24,35 @@ const addToCart = (guitar) => {
   }
 }
 
-console.log(cart.value)
+const incrementQuantity = (id) => {
+  const index = cart.value.findIndex(product => product.id === id)
+  if(cart.value[index].quantity >= 10) return
+  cart.value[index].quantity++
+}
+
+const decrementQuantity = (id) => {
+  const index = cart.value.findIndex(product => product.id === id)
+  if(cart.value[index].quantity <= 1) return
+  cart.value[index].quantity--
+}
+
+defineEmits(['increment-quantity', 'decrement-quantity'])
 </script>
 
 <template>
-  <Header :cart="cart" />
+  <Header 
+  :cart="cart" 
+  @increment-quantity="incrementQuantity" 
+  @decrement-quantity="decrementQuantity" />
 
   <main class="container-xl">
     <h2 class="text-center py-5">Our Collection</h2>
     <!-- GUITAR -->
     <div class="row">
-      <Guitar v-for="guitar in guitars" :guitar="guitar" @add-to-cart="addToCart" />
+      <Guitar 
+      v-for="guitar in guitars" 
+      :guitar="guitar" 
+      @add-to-cart="addToCart" />
     </div>
   </main>
 
