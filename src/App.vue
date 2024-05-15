@@ -1,5 +1,5 @@
 <script setup>
-import { ref, reactive, onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
 import { db } from './data/guitars';
 import Guitar from './components/Guitar.vue';
 import Header from './components/Header.vue';
@@ -7,9 +7,11 @@ import Footer from './components/Footer.vue'
 
 const guitars = ref([]);
 const cart = ref([]);
+const guitar = ref({})
 
 onMounted(() => {
   guitars.value = db;
+  guitar.value = db[3];
 })
 
 const addToCart = (guitar) => {
@@ -24,6 +26,14 @@ const addToCart = (guitar) => {
   }
 }
 
+const deleteProduct = (id) => {
+  cart.value = cart.value.filter(product => product.id !== id)
+}
+
+const emptyCart = () => {
+  cart.value = []
+}
+
 const incrementQuantity = (id) => {
   const index = cart.value.findIndex(product => product.id === id)
   if(cart.value[index].quantity >= 10) return
@@ -36,14 +46,20 @@ const decrementQuantity = (id) => {
   cart.value[index].quantity--
 }
 
+
 defineEmits(['increment-quantity', 'decrement-quantity'])
 </script>
 
 <template>
   <Header 
   :cart="cart" 
+  :guitar="guitar"
   @increment-quantity="incrementQuantity" 
-  @decrement-quantity="decrementQuantity" />
+  @decrement-quantity="decrementQuantity"
+  @add-to-cart="addToCart"
+  @delete-product="deleteProduct"
+  @empty-cart="emptyCart"
+  />
 
   <main class="container-xl">
     <h2 class="text-center py-5">Our Collection</h2>

@@ -1,11 +1,21 @@
 <script setup>
+import { computed } from 'vue';
+
 const props = defineProps({
   cart: {
     type: Array,
     required: true
+  },
+  guitar: {
+    type: Object,
+    required: true
   }
 })
+defineEmits(['increment-quantity', 'decrement-quantity', 'add-to-cart', 'delete-product', 'empty-cart'])
 
+const totalPayment = computed(() => {
+  return props.cart.reduce((total, product) => total + (product.quantity * product.price), 0)
+})
 </script>
 
 <template>
@@ -42,7 +52,7 @@ const props = defineProps({
                       </td>
                       <td>{{ product.name }}</td>
                       <td class="fw-bold">
-                        {{ product.price }}
+                        {{ product.price }}€
                       </td>
                       <td class="flex align-items-start gap-4">
                         <button @click="$emit('decrement-quantity', product.id)" type="button" class="btn btn-dark">
@@ -54,7 +64,7 @@ const props = defineProps({
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-danger" type="button">
+                        <button class="btn btn-danger" type="button" @click="$emit('delete-product', product.id)">
                           X
                         </button>
                       </td>
@@ -62,8 +72,8 @@ const props = defineProps({
                   </tbody>
                 </table>
 
-                <p class="text-end">Total payable: <span class="fw-bold">$899</span></p>
-                <button class="btn btn-dark w-100 mt-3 p-2">Empty Cart</button>
+                <p class="text-end">Total payable: <span class="fw-bold">{{ totalPayment }} €</span></p>
+                <button class="btn btn-dark w-100 mt-3 p-2" @click="$emit('empty-cart')" >Empty Cart</button>
               </div>
             </div>
           </div>
@@ -72,19 +82,15 @@ const props = defineProps({
 
       <div class="row mt-5">
         <div class="col-md-6 text-center text-md-start pt-5">
-          <h1 class="display-2 fw-bold">VAI model</h1>
-          <p class="mt-5 fs-5 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus,
-            possimus
-            quibusdam dolor nemo velit quo, fuga omnis, iure molestias optio tempore sint at ipsa dolorum
-            odio
-            exercitationem eos inventore odit.</p>
-          <p class="text-primary fs-1 fw-black">$399</p>
-          <button type="button" class="btn fs-4 bg-primary text-white py-2 px-5">Add to Cart</button>
+          <h1 class="display-2 fw-bold">Model: {{ guitar.name }}</h1>
+          <p class="mt-5 fs-5 text-white">{{ guitar.description }}</p>
+          <p class="text-primary fs-1 fw-black">{{ guitar.price }}</p>
+          <button @click="$emit('add-to-cart', guitar)" type="button"
+            class="btn fs-4 bg-primary text-white py-2 px-5">Add to Cart</button>
         </div>
       </div>
+      <img class="header-guitar" src="/img/header_guitar.png" alt="image header">
+
     </div>
-
-    <img class="header-guitarra" src="" alt="image header">
   </header>
-
 </template>
