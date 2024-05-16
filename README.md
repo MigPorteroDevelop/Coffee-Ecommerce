@@ -23,7 +23,7 @@ npm run build
 
 ## Built with 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
+_Tools_
 
 * [Vue](https://vuejs.org/guide/introduction.html) - The web framework used
 * [Node](https://nodejs.org/en) - Dependency handler
