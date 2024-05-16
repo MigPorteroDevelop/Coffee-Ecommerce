@@ -73,7 +73,7 @@ const totalPayment = computed(() => {
                 </table>
 
                 <p class="text-end">Total payable: <span class="fw-bold">{{ totalPayment }} €</span></p>
-                <button class="btn btn-dark w-100 mt-3 p-2" @click="$emit('empty-cart')" >Empty Cart</button>
+                <button class="btn btn-dark w-100 mt-3 p-2" @click="$emit('empty-cart')">Empty Cart</button>
               </div>
             </div>
           </div>
