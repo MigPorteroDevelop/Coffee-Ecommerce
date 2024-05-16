@@ -1,7 +1,30 @@
-# Vue 3 + Vite
+# Dream Guitar
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+_This project is a small guitar store. It displays all the information from a JSON database within the app, regarding each guitar, showcasing them in different "cards". It also includes a cart, where added items, their quantities, information, and total to pay are displayed. It's implemented with persistence, so when reloading the page, the information remains saved._
 
-## Recommended IDE Setup
+## Starting 🚀
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+_Instructions:_
+
+_Project Setup_
+```sh
+npm install
+```
+
+_Compile and Hot-Reload for Development_
+```sh
+npm run dev
+```
+
+_Compile and Minify for Production_
+```sh
+npm run build
+```
+
+## Built with 🛠️
+
+_Menciona las herramientas que utilizaste para crear tu proyecto_
+
+* [Vue](https://vuejs.org/guide/introduction.html) - The web framework used
+* [Node](https://nodejs.org/en) - Dependency handler
+* [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/) - Framework for styles
