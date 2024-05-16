@@ -82,9 +82,9 @@ const totalPayment = computed(() => {
 
       <div class="row mt-5">
         <div class="col-md-6 text-center text-md-start pt-5">
-          <h1 class="display-2 fw-bold">Model: {{ guitar.name }}</h1>
+          <h1 class="display-2 fw-bold">{{ guitar.name }}</h1>
           <p class="mt-5 fs-5 text-white">{{ guitar.description }}</p>
-          <p class="text-primary fs-1 fw-black">{{ guitar.price }}</p>
+          <p class="text-primary fs-1 fw-black">{{ guitar.price }} €</p>
           <button @click="$emit('add-to-cart', guitar)" type="button"
             class="btn fs-4 bg-primary text-white py-2 px-5">Add to Cart</button>
         </div>
