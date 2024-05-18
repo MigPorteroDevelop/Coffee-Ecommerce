@@ -757,11 +757,11 @@ button:not(:disabled),
   background-size: cover;
   position: relative;
 }
-.header .header-guitar {
+.header .header-coffee {
   display: none;
 }
 @media (min-width: 992px) {
-  .header .header-guitar {
+  .header .header-coffee {
     display: block;
     position: absolute;
     right: 0;

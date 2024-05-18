@@ -1,6 +1,6 @@
-# Dream Guitar
+# Dream Coffee
 
-_This project is a small guitar store. It displays all the information from a JSON database within the app, regarding each guitar, showcasing them in different "cards". It also includes a cart, where added items, their quantities, information, and total to pay are displayed. It's implemented with persistence, so when reloading the page, the information remains saved._
+_This project is a small coffee store. It displays all the information from a JSON database within the app, regarding each coffee, showcasing them in different "cards". It also includes a cart, where added items, their quantities, information, and total to pay are displayed. It's implemented with persistence, so when reloading the page, the information remains saved._
 
 ## Starting 🚀
 

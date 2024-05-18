@@ -1,6 +1,6 @@
 <script setup>
 const props = defineProps({
-  guitar: {
+  coffee: {
     type: Object,
     required: true
   }
@@ -13,18 +13,18 @@ defineEmits(['add-to-cart'])
   <div class="container col-md-6 col-lg-4 my-4 row align-items-stretch py-2">
     <div class="col-4 card-container">
       <img class="img-fluid" 
-      :src="'/img/' + guitar.image + '.jpg'" 
-      :alt="'img guitar' + guitar.name">
+      :src="'/img/' + coffee.image + '.jpg'" 
+      :alt="'img coffee' + coffee.name">
     </div>
     <div class="col-8 card-container">
       <div class="card-content">
-        <h3 class="text-black fs-4 fw-bold text-uppercase">{{ guitar.name }}</h3>
-        <p>{{ guitar.description }}</p>
-        <p class="fw-black text-primary fs-3">{{ guitar.price }} €</p>
+        <h3 class="text-black fs-4 fw-bold text-uppercase">{{ coffee.name }}</h3>
+        <p>{{ coffee.description }}</p>
+        <p class="fw-black text-primary fs-4">{{ coffee.price }} €</p>
       </div>
       <div class="card-footer">
         <button type="button" class="btn btn-dark w-100" 
-        @click="$emit('add-to-cart', guitar)">Add to Cart</button>
+        @click="$emit('add-to-cart', coffee)">Add to Cart</button>
       </div>
     </div>
   </div>
@@ -42,7 +42,6 @@ defineEmits(['add-to-cart'])
   width: 100%;
   height: auto;
 }
-
 .card-content {
   display: flex;
   flex-direction: column;

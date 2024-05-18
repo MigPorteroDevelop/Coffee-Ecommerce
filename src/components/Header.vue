@@ -6,7 +6,7 @@ const props = defineProps({
     type: Array,
     required: true
   },
-  guitar: {
+  coffee: {
     type: Object,
     required: true
   }
@@ -48,7 +48,7 @@ const totalPayment = computed(() => {
                     <tr v-for="product in cart">
                       <td>
                         <img class="img-fluid" :src="'/img/' + product.image + '.jpg'"
-                          :alt="'guitar img' + product.name">
+                          :alt="'coffee img' + product.name">
                       </td>
                       <td>{{ product.name }}</td>
                       <td class="fw-bold">
@@ -82,15 +82,22 @@ const totalPayment = computed(() => {
 
       <div class="row mt-5">
         <div class="col-md-6 text-center text-md-start pt-5">
-          <h1 class="display-2 fw-bold">{{ guitar.name }}</h1>
-          <p class="mt-5 fs-5 text-white">{{ guitar.description }}</p>
-          <p class="text-primary fs-1 fw-black">{{ guitar.price }} €</p>
-          <button @click="$emit('add-to-cart', guitar)" type="button"
+          <h1 class="display-2 fw-bold">{{ coffee.name }}</h1>
+          <p class="mt-5 fs-5 text-white">{{ coffee.description }}</p>
+          <p class="text-primary fs-1 fw-black">{{ coffee.price }} €</p>
+          <button @click="$emit('add-to-cart', coffee)" type="button"
             class="btn fs-4 bg-primary text-white py-2 px-5">Add to Cart</button>
         </div>
       </div>
-      <img class="header-guitar" src="/img/header_guitar.png" alt="image header">
+      <img class="header-coffee" src="/img/header_coffee.png" alt="image header">
 
     </div>
   </header>
 </template>
+
+<style>
+.cart {
+  position: sticky;
+  top: 0;
+}
+</style>
