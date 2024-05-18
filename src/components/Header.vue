@@ -94,10 +94,3 @@ const totalPayment = computed(() => {
     </div>
   </header>
 </template>
-
-<style>
-.cart {
-  position: sticky;
-  top: 0;
-}
-</style>
