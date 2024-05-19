@@ -89,11 +89,12 @@ const isInCart = computed(() => {
           <h1 class="display-2 fw-bold">{{ coffee.name }}</h1>
           <p class="mt-5 fs-5 text-white">{{ coffee.description }}</p>
           <p class="text-primary fs-1 fw-black">{{ coffee.price }} €</p>
-          <div v-if="!isInCart" class="card-footer">
-            <button type="button" class="btn btn-dark w-100" @click="$emit('add-to-cart', coffee)">Add to Cart</button>
+          <div v-if="!isInCart">
+            <button @click="$emit('add-to-cart', coffee)" type="button"
+              class="btn fs-4 bg-primary text-white py-2 px-5">Add to Cart</button>
           </div>
           <div v-else class="card-footer">
-            <button class="btn btn-danger w-100">Added</button>
+            <button class="btn fs-4 bg-primary text-white py-2 px-5">ADDED</button>
           </div>
         </div>
       </div>
