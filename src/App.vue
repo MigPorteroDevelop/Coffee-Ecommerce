@@ -69,11 +69,13 @@ const decrementQuantity = (id) => {
 <template>
   <Header 
   :cart="cart" 
-  :coffee="coffee" 
+  :coffee="coffee"
   @increment-quantity="incrementQuantity" 
   @decrement-quantity="decrementQuantity"
   @add-to-cart="addToCart" 
-  @delete-product="deleteProduct" @empty-cart="emptyCart" />
+  @delete-product="deleteProduct" 
+  @empty-cart="emptyCart" 
+  />
 
   <main class="container-xl">
     <h2 class="text-center py-5">Our Collection</h2>
@@ -83,7 +85,8 @@ const decrementQuantity = (id) => {
       :key="coffee.id"
       :cart="cart"
       :coffee="coffee" 
-      @add-to-cart="addToCart" />
+      @add-to-cart="addToCart" 
+      />
     </div>
   </main>
 
