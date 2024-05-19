@@ -79,7 +79,11 @@ const decrementQuantity = (id) => {
     <h2 class="text-center py-5">Our Collection</h2>
     <!-- COFFEE -->
     <div class="row">
-      <Coffee v-for="coffee in coffees" :coffee="coffee" @add-to-cart="addToCart" />
+      <Coffee v-for="coffee in coffees" 
+      :key="coffee.id"
+      :cart="cart"
+      :coffee="coffee" 
+      @add-to-cart="addToCart" />
     </div>
   </main>
 

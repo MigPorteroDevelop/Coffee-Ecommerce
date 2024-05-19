@@ -3,9 +3,10 @@
   font-weight: 900;
 }
 
-.btn-dark {
+.btn-dark, .btn-danger {
   text-transform: uppercase;
 }
+
 
 .cart {
   background-color: transparent;

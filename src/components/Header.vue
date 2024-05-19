@@ -27,7 +27,7 @@ const totalPayment = computed(() => {
             <img class="img-fluid" src="/img/logo.png" alt="img logo">
           </a>
         </div>
-        <nav class="col-md-6 a mt-5 d-flex align-items-start justify-content-end">
+        <nav class="col-md-6 mt-5 d-flex align-items-start justify-content-end">
           <div class=cart>
             <img class="img-fluid" src="/img/cart.png" alt="imagen cart" />
 
