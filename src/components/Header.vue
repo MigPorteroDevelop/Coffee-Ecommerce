@@ -35,7 +35,7 @@ const isInCart = computed(() => {
           <div class=cart>
             <img class="img-fluid" src="/img/cart.png" alt="imagen cart" />
 
-            <div id=cart class="bg-white p-3">
+            <div id=cart class="bg-white pl-2">
               <p v-if="cart.length === 0" class="text-center m-0 ">CART IS EMPTY</p>
               <div v-else>
                 <table class="w-100 table">
@@ -93,7 +93,7 @@ const isInCart = computed(() => {
             <button @click="$emit('add-to-cart', coffee)" type="button"
               class="btn fs-4 bg-primary text-white py-2 px-5">Add to Cart</button>
           </div>
-          <div v-else class="card-footer">
+          <div v-else>
             <button class="btn fs-4 bg-primary text-white py-2 px-5">ADDED</button>
           </div>
         </div>
@@ -104,8 +104,4 @@ const isInCart = computed(() => {
   </header>
 </template>
 
-<style scoped>
-.btn-danger {
-  cursor: auto;
-}
-</style>
+
