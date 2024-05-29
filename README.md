@@ -26,5 +26,3 @@ npm run build
 _Tools_
 
 * [Vue](https://vuejs.org/guide/introduction.html) - The web framework used
-* [Node](https://nodejs.org/en) - Dependency handler
-* [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/) - Framework for styles
