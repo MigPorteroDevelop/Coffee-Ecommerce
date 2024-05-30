@@ -68,13 +68,13 @@ const decrementQuantity = (id) => {
 
 <template>
   <Header 
-  :cart="cart" 
-  :coffee="coffee"
-  @increment-quantity="incrementQuantity" 
-  @decrement-quantity="decrementQuantity"
-  @add-to-cart="addToCart" 
-  @delete-product="deleteProduct" 
-  @empty-cart="emptyCart" 
+    :cart="cart" 
+    :coffee="coffee"
+    @increment-quantity="incrementQuantity" 
+    @decrement-quantity="decrementQuantity"
+    @add-to-cart="addToCart" 
+    @delete-product="deleteProduct" 
+    @empty-cart="emptyCart" 
   />
 
   <main class="container-xl">
@@ -82,10 +82,10 @@ const decrementQuantity = (id) => {
     <!-- COFFEE -->
     <div class="row">
       <Coffee v-for="coffee in coffees" 
-      :key="coffee.id"
-      :cart="cart"
-      :coffee="coffee" 
-      @add-to-cart="addToCart" 
+        :key="coffee.id"
+        :cart="cart"
+        :coffee="coffee" 
+        @add-to-cart="addToCart" 
       />
     </div>
   </main>
