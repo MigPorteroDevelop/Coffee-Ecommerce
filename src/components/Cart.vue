@@ -19,7 +19,7 @@ const totalPayment = computed(() => {
 </script>
 
 <template>
-  <nav class="col-md-6 mt-5 d-flex align-items-start justify-content-end">
+  <nav class="nav col-md-6 d-flex align-items-start justify-content-end">
     <div class=cart>
       <img class="img-fluid" src="/img/cart.png" alt="imagen cart" />
 
@@ -70,3 +70,16 @@ const totalPayment = computed(() => {
     </div>
   </nav>
 </template>
+
+<style scoped>
+.nav {
+  margin-top: 50px;
+}
+
+@media (max-width: 426px) {
+  .nav {
+    margin-top: -40px; 
+    margin-right: -50px;
+  }
+}
+</style>
