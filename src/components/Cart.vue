@@ -29,8 +29,8 @@ const totalPayment = computed(() => {
           <table class="w-100 table">
             <thead>
               <tr>
-                <th>Image</th>
-                <th>Name</th>
+                <th class="imgPhone">Image</th>
+                <th class="namePhone">Name</th>
                 <th>Price</th>
                 <th>Quantity</th>
                 <th></th>
@@ -38,10 +38,10 @@ const totalPayment = computed(() => {
             </thead>
             <tbody>
               <tr v-for="product in cart">
-                <td>
+                <td class="imgPhone">
                   <img class="img-fluid" :src="'/img/' + product.image + '.jpg'" :alt="'coffee img' + product.name">
                 </td>
-                <td>{{ product.name }}</td>
+                <td class="namePhone">{{ product.name }}</td>
                 <td class="fw-bold">
                   {{ product.price }}€
                 </td>
@@ -80,6 +80,20 @@ const totalPayment = computed(() => {
   .nav {
     margin-top: -40px; 
     margin-right: -50px;
+  }
+
+  .imgPhone{
+    display: none;
+  }
+
+  #table{
+    background-color: red;
+  }
+}
+
+@media (max-width: 321px) {
+  .namePhone{
+    display: none;
   }
 }
 </style>

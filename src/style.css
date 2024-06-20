@@ -35,13 +35,20 @@
   margin-right: unset;
 }
 
+@media (max-width: 376px) {
+  .cart:hover #cart {
+    min-width: 250px;
+    width: fit-content;
+  }
+}
+
 @media (max-width: 320px) {
   .cart:hover #cart {
     display: block;
     background-color: white;
     padding: 7px 5px 2px 2px;
     height: fit-content;
-    min-width: 350px;
+    min-width: 250px;
     width: fit-content;
     top: 100%;
     right: 0;
